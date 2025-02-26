@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+  <link rel="stylesheet" href="taji.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com;">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <meta name="description" content="Welcome to our website. We provide exceptional experiences.">
+  <meta name="keywords" content="experiences, services, quality, customer service">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Welcome</h1>
+    <nav aria-label="Main Navigation">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="menu" aria-label="Toggle menu">Menu</button>
+      <ul class="menu" id="menu">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#mission">Mission & Vision</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#game">Game</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="hero" style="background-image: url('hero-bg.jpg');">
+      <div class="hero-content">
+        <h2>Welcome to Our Website</h2>
+        <p>Providing exceptional experiences.</p>
+        <a href="#about" class="cta-button">Learn More</a>
+      </div>
+    </section>
+    <section id="about">
+      <h2>About Us</h2>
+      <p>We are dedicated to providing exceptional experiences to our clients.</p>
+    </section>
+    <section id="mission">
+      <h2>Mission & Vision</h2>
+      <p>Our mission is to deliver high-quality experiences that exceed our clients' expectations. Our vision is to be a leader in our industry, known for our commitment to excellence and innovation.</p>
+    </section>
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <img src="image1.jpg" alt="Gallery Image 1">
+        <img src="image2.jpg" alt="Gallery Image 2">
+        <img src="image3.jpg" alt="Gallery Image 3">
+      </div>
+    </section>
+    <section id="testimonials">
+      <h2>Testimonials</h2>
+      <div class="testimonial">
+        <p>"This is the best service I have ever used!" - Jane Doe</p>
+      </div>
+      <div class="testimonial">
+        <p>"Exceptional quality and customer service." - John Smith</p>
+      </div>
+    </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:info@ourwebsite.com">info[at]ourwebsite[dot]com</a></p>
+      <p>Phone: (123) 456-7890</p>
+      <p>Address: 123 Main St, Anytown, USA</p>
+    </section>
+    <section id="newsletter">
+      <h2>Subscribe to our Newsletter</h2>
+      <form>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+    <section id="game">
+      <h2>2048 Game</h2>
+      <button id="new-game">New Game</button>
+      <div id="game-container">
+        <div class="grid-container">
+          <div class="grid"></div>
+          <div class="grid"></div>
+          <div class="grid"></div>
+          <div class="grid"></div>
+          <div class="grid"></div>
+          <div class="grid"></div>
+          <div class="grid"></div>
+          <div class="grid"></div>
+          <div class="grid"></div>
+          <div class="grid"></div>
+          <div class="grid"></div>
+          <div class="grid"></div>
+          <div class="grid"></div>
+          <div class="grid"></div>
+          <div class="grid"></div>
+        </div>
+        <div class="score-container">
+          <p>Score: <span id="score">0</span></p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Our Website</p>
+    <ul class="social-media">
+      <li><a href="https://facebook.com" aria-label="Facebook">Facebook</a></li>
+      <li><a href="https://twitter.com" aria-label="Twitter">Twitter</a></li>
+      <li><a href="https://instagram.com" aria-label="Instagram">Instagram</a></li>
+    </ul>
+  </footer>
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      const menu = document.querySelector('.menu');
+      const expanded = this.getAttribute('aria-expanded') === 'true' || false;
+      this.setAttribute('aria-expanded', !expanded);
+      menu.classList.toggle('show');
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // 2048 Game Logic
+    document.addEventListener('DOMContentLoaded', () => {
+      const gridDisplay = document.querySelector('.grid-container')
+      const scoreDisplay = document.getElementById('score')
+      const newGameButton = document.getElementById('new-game')
+      const width = 4
+      let squares = []
+      let score = 0
+
+        // Add your game logic here
+  
+        // Example of initializing the game
+        function initializeGame() {
+          // Initialize the game grid and score
+        }
+  
+        newGameButton.addEventListener('click', initializeGame);
+      });
+    </script>
+</body>
+</html>
+
+
